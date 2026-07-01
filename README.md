@@ -1,7 +1,7 @@
 # 🌱 Spring Boot Registration Page
 
 A full-stack user registration application built with **Spring Boot** and **HTML/CSS/JavaScript**.
-
+![Screenshot of Web_Page](image.png)
 ## 🚀 Features
 
 - ✅ User registration with validation
