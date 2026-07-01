@@ -28,14 +28,14 @@ A full-stack user registration application built with **Spring Boot** and **HTML
 ## 📁 Project Structure
 
 ```
-\`\`\`
+
 Registerpage-SpringBoot/
 ├── Backend/
 │   └── register-app/       # Spring Boot application
 ├── Frontend/
 │   └── Register.html       # Registration UI
 └── README.md
-\`\`\`
+
 ```
 ## ⚙️ Setup & Run
 
