@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Register Page</title>
+        <style>
+
+            /* ─── Reset & Base ─────────────────────────── */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+
+            body {
+                background-color: #f0f2f5;
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            /* ─── Main Container ───────────────────────── */
+            .container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 60px;
+                width: 100%;
+                max-width: 1000px;
+                padding: 20px;
+            }
+
+            /* ─── Left Section ─────────────────────────── */
+            .left-section {
+                flex: 1;
+                max-width: 420px;
+            }
+
+            .logo {
+                font-size: 32px;
+                font-weight: 800;
+                color: #1877f2;
+                margin-bottom: 16px;
+                line-height: 1.2;
+            }
+
+            .logo-desc {
+                font-size: 18px;
+                color: #1c1e21;
+                line-height: 1.5;
+            }
+
+            /* ─── Right Section ────────────────────────── */
+            .right-section {
+                flex: 1;
+                max-width: 400px;
+                width: 100%;
+            }
+
+            /* ─── Register Card ────────────────────────── */
+            .register-card {
+                background-color: #ffffff;
+                border-radius: 8px;
+                box-shadow: 0 2px 16px rgba(0, 0, 0, 0.12);
+                padding: 24px;
+            }
+
+            .register-card h2 {
+                font-size: 28px;
+                font-weight: 700;
+                color: #1c1e21;
+                text-align: center;
+                margin-bottom: 6px;
+            }
+
+            .register-card .sub-head {
+                text-align: center;
+                color: #606770;
+                font-size: 15px;
+                margin-bottom: 20px;
+                border-bottom: 1px solid #dddfe2;
+                padding-bottom: 16px;
+            }
+
+            /* ─── Form ─────────────────────────────────── */
+            form {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            /* ─── Inputs ───────────────────────────────── */
+            .register-card input {
+                width: 100%;
+                padding: 14px 16px;
+                font-size: 16px;
+                border: 1px solid #dddfe2;
+                border-radius: 6px;
+                outline: none;
+                transition: all 0.2s ease;
+                background-color: #f5f6f7;
+                color: #1c1e21;
+            }
+
+            .register-card input::placeholder {
+                color: #90949c;
+            }
+
+            .register-card input:focus {
+                border-color: #1877f2;
+                background-color: #ffffff;
+                box-shadow: 0 0 0 2px rgba(24, 119, 242, 0.2);
+            }
+
+            /* ─── Button ───────────────────────────────── */
+            .register-btn {
+                width: 100%;
+                padding: 14px;
+                background-color: #42b72a;
+                color: #ffffff;
+                border: none;
+                border-radius: 6px;
+                font-size: 18px;
+                font-weight: 700;
+                cursor: pointer;
+                transition: all 0.2s ease;
+                margin-top: 4px;
+                letter-spacing: 0.3px;
+            }
+
+            .register-btn:hover {
+                background-color: #36a420;
+                transform: translateY(-1px);
+                box-shadow: 0 4px 12px rgba(66, 183, 42, 0.3);
+            }
+
+            .register-btn:active {
+                transform: translateY(0px);
+            }
+
+            .register-btn:disabled {
+                background-color: #a5d6a7;
+                cursor: not-allowed;
+                transform: none;
+            }
+
+            /* ─── Login Link ───────────────────────────── */
+            .login-link {
+                display: block;
+                text-align: center;
+                margin-top: 16px;
+                color: #1877f2;
+                text-decoration: none;
+                font-size: 14px;
+                font-weight: 500;
+            }
+
+            .login-link:hover {
+                text-decoration: underline;
+            }
+
+            /* ─── Message Box ──────────────────────────── */
+            .message {
+                display: none;
+                padding: 12px 16px;
+                border-radius: 6px;
+                font-size: 14px;
+                font-weight: 500;
+                text-align: center;
+                margin-top: 4px;
+            }
+
+            .message.success {
+                display: block;
+                background-color: #e8f5e9;
+                color: #2e7d32;
+                border: 1px solid #a5d6a7;
+            }
+
+            .message.error {
+                display: block;
+                background-color: #ffebee;
+                color: #c62828;
+                border: 1px solid #ef9a9a;
+            }
+
+            .message.loading {
+                display: block;
+                background-color: #e3f2fd;
+                color: #1565c0;
+                border: 1px solid #90caf9;
+            }
+
+            /* ─── Input Error State ────────────────────── */
+            .register-card input.input-error {
+                border-color: #e53935;
+                background-color: #fff8f8;
+            }
+
+            /* ─── Responsive Mobile ────────────────────── */
+            @media (max-width: 768px) {
+                .container {
+                    flex-direction: column;
+                    gap: 24px;
+                }
+
+                .left-section {
+                    text-align: center;
+                    max-width: 100%;
+                }
+
+                .logo {
+                    font-size: 26px;
+                }
+
+                .right-section {
+                    max-width: 100%;
+                }
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+        <div class="container">
+
+            <!-- ─── Left Section ───────────────────── -->
+            <div class="left-section">
+                <div class="logo">🌱 Spring Boot</div>
+                <p class="logo-desc">
+                    Connect with friends and the world around you 
+                    with Spring Boot Register Page.
+                </p>
+            </div>
+
+            <!-- ─── Right Section ──────────────────── -->
+            <div class="right-section">
+                <div class="register-card">
+
+                    <h2>Create a new account</h2>
+                    <p class="sub-head">It's quick and easy</p>
+
+                    <form id="register-form">
+
+                        <input 
+                            type="text" 
+                            name="name" 
+                            id="name" 
+                            placeholder="Full Name"
+                        >
+
+                        <input 
+                            type="email" 
+                            name="email" 
+                            id="email" 
+                            placeholder="Email Address"
+                        >
+
+                        <input 
+                            type="password" 
+                            name="password" 
+                            id="password" 
+                            placeholder="New Password"
+                        >
+
+                        <!-- ─── Message Box ──────────── -->
+                        <div class="message" id="message"></div>
+
+                        <button type="submit" class="register-btn" id="submit-btn">
+                            Sign Up
+                        </button>
+
+                    </form>
+
+                    <a href="#" class="login-link">Already have an account? Log in</a>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ─── JavaScript ──────────────────────────────── -->
+        <script>
+
+            // ─── API URL ─────────────────────────────────
+            const API_URL = "http://localhost:8080/api/users/register";
+
+            // ─── Helper: Show Message ─────────────────────
+            function showMessage(text, type) {
+                const msg = document.getElementById("message");
+                msg.textContent  = text;
+                msg.className    = `message ${type}`;
+            }
+
+            // ─── Helper: Clear Input Errors ───────────────
+            function clearErrors() {
+                document.querySelectorAll("input").forEach(input => {
+                    input.classList.remove("input-error");
+                });
+            }
+
+            // ─── Helper: Validate Inputs ──────────────────
+            function validateInputs(name, email, password) {
+                let isValid = true;
+
+                if (!name.trim()) {
+                    document.getElementById("name").classList.add("input-error");
+                    isValid = false;
+                }
+
+                if (!email.trim() || !email.includes("@")) {
+                    document.getElementById("email").classList.add("input-error");
+                    isValid = false;
+                }
+
+                if (password.length < 6) {
+                    document.getElementById("password").classList.add("input-error");
+                    isValid = false;
+                }
+
+                if (!isValid) {
+                    showMessage(
+                        "⚠️ Please fill in all fields correctly. Password must be at least 6 characters.",
+                        "error"
+                    );
+                }
+
+                return isValid;
+            }
+
+            // ─── Form Submit Handler ──────────────────────
+            document.getElementById("register-form").addEventListener("submit", async function(e) {
+
+                e.preventDefault(); // Stop page reload
+
+                clearErrors();
+
+                // Get values
+                const name     = document.getElementById("name").value;
+                const email    = document.getElementById("email").value;
+                const password = document.getElementById("password").value;
+
+                // Validate
+                if (!validateInputs(name, email, password)) return;
+
+                // Disable button & show loading
+                const btn = document.getElementById("submit-btn");
+                btn.disabled    = true;
+                btn.textContent = "Signing Up...";
+                showMessage("⏳ Creating your account...", "loading");
+
+                try {
+                    // ─── Send POST Request to Spring Boot ──
+                    const response = await fetch(API_URL, {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({
+                            name:     name,
+                            email:    email,
+                            password: password
+                        })
+                    });
+
+                    // ─── Handle Response ────────────────────
+                    if (response.ok) {
+                        const data = await response.json();
+                        showMessage(
+                            `✅ Account created successfully! Welcome, ${data.name}!`,
+                            "success"
+                        );
+                        // Clear form
+                        document.getElementById("register-form").reset();
+
+                    } else {
+                        const errorText = await response.text();
+                        showMessage(`❌ ${errorText}`, "error");
+                    }
+
+                } catch (error) {
+                    // ─── Network / Server Error ─────────────
+                    console.error("Error:", error);
+                    showMessage(
+                        "🔴 Cannot connect to server. Make sure Spring Boot is running on port 8080.",
+                        "error"
+                    );
+                } finally {
+                    // Re-enable button
+                    btn.disabled    = false;
+                    btn.textContent = "Sign Up";
+                }
+            });
+
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,50 @@
+# ─── Compiled Files ─────────────────────────────
+target/
+build/
+*.class
+*.jar
+*.war
+
+# ─── IntelliJ IDEA ──────────────────────────────
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# ─── Eclipse ────────────────────────────────────
+.project
+.classpath
+.settings/
+bin/
+
+# ─── VS Code ────────────────────────────────────
+.vscode/
+
+# ─── Maven ──────────────────────────────────────
+.mvn/
+mvnw
+mvnw.cmd
+
+# ─── Database Files ─────────────────────────────
+*.db
+*.mv.db
+*.trace.db
+*.lock.db
+
+# ─── Logs ───────────────────────────────────────
+*.log
+logs/
+
+# ─── OS Files ───────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ─── Environment Files ──────────────────────────
+.env
+application-local.properties
+
+# ─── Node (if you add frontend later) ───────────
+node_modules/
+package-lock.json
