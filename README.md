@@ -75,14 +75,11 @@ H2 Console available at: `http://localhost:8080/h2-console`
 - Username: `sa`
 - Password: *(empty)*
 
-## 📸 Screenshots
-
-*(Add screenshots of your registration page here)*
 
 ## 👨‍💻 Author
 
 **Sadaham**
-- GitHub: [@your-username](https://github.com/your-username)
+- GitHub: [@sadahamvishwanath](https://github.com/sadahamvishwanath)
 
 ## 📄 License
 
